@@ -1,59 +1,58 @@
 # walmart-sales-executive-analyisis
 Executive sales performance, spatial efficiency and inventory optimization analysis for Walmart stores using Excel
 
-# 📊 E-Commerce Sales Data Cleaning & Executive Analysis (Excel)
+# 🛒 Walmart 2012 Sales Analysis & Executive Inventory Strategy (Excel)
 
 ## 📌 Project Overview
-This project focuses on conducting end-to-end data cleaning, transformation, and exploratory commercial analysis on an e-commerce sales dataset for Q4. 
+This project delivers a commercial and financial performance analysis of Walmart's 2012 weekly sales across multiple store types and product departments. 
 
-The primary objective was to transform raw, unstructured transactional data into a clean, structured model to extract key performance indicators (KPIs) and deliver actionable business insights regarding revenue, product performance, and regional sales distribution.
+The primary goal was to process raw relational transactional tables, merge operational dimensions, and calculate key efficiency metrics—such as *Sales per Square Meter ($/m²)* and *Departmental Sales Share (%)*—to provide executive-level recommendations regarding budget reallocation, inventory protection, and floor-space optimization.
 
 ---
 
 ## 🛠️ Tools & Techniques Used
-* *Tool:* Microsoft Excel
-* *Data Cleaning & Preprocessing:* Handling missing values, standardizing string/text data (capitalization & regional naming), splitting complex product attributes.
-* *Data Modeling & Feature Engineering:* Creating custom categorical tags (Category, Type, Specifications) from multi-attribute text.
-* *Data Aggregation & Summarization:* Formulas (SUMIF, AVERAGE, COUNTIF), Pivot Tables, and descriptive executive metrics.
+* *Tool:* Microsoft Excel (100% Advanced Excel Formulas & Analytical Features)
+* *Data Transformation & Modeling:* XLOOKUP / VLOOKUP to join raw sales records with store size and department metadata tables.
+* *Data Cleaning & Standardization:* Date formatting, handling missing values, and generating clean time-series keys.
+* *Data Summarization & Analysis:* Dynamic Pivot Tables, nested formulas (SUMIFS, AVERAGEIFS), floor efficiency metrics ($/m²), and cross-departmental share analysis.
+* *Executive Presentation:* Executive dashboard layout and strategic decision framework.
 
 ---
 
-## 🧹 Data Cleaning & ETL Process
+## 🧹 Data Cleaning & Relational Architecture
 
-The raw dataset contained *753 transactions* with several quality issues that were systematically resolved in the Datos_Limpios phase:
+The workbook integrates three raw data sources (raw_ventas, raw_departamento, raw_tiendas) into a unified master model (Clean_ventas):
 
-1. *Text Standardization:* Fixed inconsistent city naming conventions (e.g., standardizing capitalization and regional variants for cities like Monterrey and Bogotá).
-2. *Missing Value Imputation:* Identified and resolved 10 missing entries in Precio unitario and 6 missing entries in Monto total using deterministic price mapping and quantity back-calculations.
-3. *Feature Engineering:* Deconstructed composite product strings (e.g., Laptop-Oficina-32GB) into three distinct analytical dimensions:
-   * *Category:* Laptop, Auriculares, Tablet
-   * *Type:* Oficina, Gaming, Bluetooth, Estándar
-   * *Specifications:* 8GB, 16GB, 32GB
+1. *Table Relational Merging:* Enriched over 95,000 transaction records by linking Store IDs and Department IDs with metadata to bring in Store Type (A, B), Store Size (sq. meters/feet), and Department Names.
+2. *Key Metric Generation:* Calculated revenue density (*Sales per m²*) to evaluate floor space profitability across different retail categories.
+3. *Data Aggregation:* Built structured Pivot Tables to isolate 2012 sales trends and evaluate performance across 14 commercial departments.
 
 ---
 
-## 📊 Key Commercial Findings & Metrics
+## 📊 Strategic Executive Findings
 
-Based on the processed executive summary, the core performance metrics for the period are:
+### 🏆 Top Performing Departments (Core Drivers)
+* *Leading Categories:* *Pantry & Staples* (Despensa y Básicos), *Fresh Food* (Comida Fresca), and *Household & Paper Products* (Artículos del Hogar y Papel).
+* *Impact:* These three departments represent the overwhelming majority of revenue and drive maximum foot traffic and high sales density per square meter.
 
-| Metric | Value |
-| :--- | :--- |
-| *Total Quarterly Revenue* | *$2,944,620.61* |
-| *Total Transactions* | *753* |
-| *Average Order Value (AOV)* | *$3,910.52* |
-| *Top Performing City (by Sales)* | *Monterrey* |
-| *Best-Selling Product (by Volume)* | *Laptop-Oficina-32GB* |
+### ⚠️ Underperforming Departments (Low Efficiency)
+* *Lowest Contributors:* *Lawn & Garden* (Jardín y Vida al Aire Libre) and *Office, School & Crafts* (Oficina, Escuela y Manualidades).
+* *Impact:* Generates *less than 2% of total sales revenue*, resulting in inefficient store floor-space allocation.
 
 ---
 
-## 💡 Executive Insights & Recommendations
+## 💡 Commercial Implications & Action Plan
 
-* *Regional Dominance:* Monterrey leads total sales volume across all regions, suggesting strong demand in this market. Recommendations include optimizing local warehouse stock and targeted marketing campaigns.
-* *Product Mix Strategy:* High-spec operational hardware (Laptop-Oficina-32GB) generates the highest volume, indicating strong demand from enterprise or remote-work customer segments.
-* *Data Quality Governance:* Future transactional systems should implement strict validation controls at input to prevent missing price values and inconsistent text formats.
+1. *Inventory Protection & Hot-Spot Layout:*
+   * Place top-performing categories (Pantry, Fresh Food) in prime store traffic corridors ("Hot Zones") to maximize cross-selling.
+   * Implement safety stock protocols and strict inventory management to prevent stock-outs on critical revenue drivers.
+2. *Floor Space & Floor Budget Optimization:*
+   * *Reallocate Floor Space:* Reduce the physical footprint of low-density departments (<2% share, e.g., Lawn & Garden) and reallocate sq. footage to high-yielding categories.
+   * *Private Label Substitution:* If margins remain low for underperforming categories, replace secondary brands with higher-margin Walmart private labels or trending seasonal merchandise.
 
 ---
 
 ## 📁 Repository Structure
 ```text
-├── Proyecto 1_ Limpieza y resumen de datos en hojas de cálculo.xlsx  # Main workbook with raw & cleaned sheets
-└── README.md                                                         # Project documentation
+├── Proyecto 2_ Resumen Ejecutivo de Ventas Walmart.xlsx  # Complete workbook (Raw data, Cleaned data, Pivots, & Executive Summary)
+└── README.md                                             # Executive documentation
